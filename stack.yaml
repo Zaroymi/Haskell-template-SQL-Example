@@ -29,8 +29,7 @@ resolver:
 #   subdirs:
 #   - auto-update
 #   - wai
-packages:
-- .
+# packages:
 # Dependency packages to be pulled from upstream that are not in the resolver.
 # These entries can reference officially published versions as well as
 # forks / in-progress versions pinned to a git hash. For example:
@@ -40,10 +39,32 @@ packages:
 # - git: https://github.com/commercialhaskell/stack.git
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
 #
-# extra-deps: []
 
-# Override default flag values for local packages and extra-deps
-# flags: {}
+
+extra-deps:
+  - MissingH-1.4.3.0@sha256:32f9892ec98cd21df4f4d3ed8d95a3831ae74287ea0641d6f09b2dc6ef061d39,4859
+  - random-1.1@sha256:7b67624fd76ddf97c206de0801dc7e888097e9d572974be9b9ea6551d76965df,1777
+  - regex-posix-clib-2.7
+  - bytestring-encoding-0.1.1.0@sha256:1c3b97eb6345fd7153006211c8272215cd78bb0cf440c41185290822f1e3f2c2,1738
+  - ghc-api-compat-8.6@sha256:18f82e25aac57ad16c5f92a2f7b769048c5251bb707f68745ed1b91cbc19dce4,15602
+  - heapsize-0.3.0.1@sha256:0b69aa97a46d819b700ac7b145f3b5493c3565cf2c5b8298682238d405d0326e,1417
+  - hie-compat-0.2.0.0@sha256:62d65ff684acdb494ee320264a7ea389dbfd00dc8269eb9c123bd792cfd7059e,1497
+  - hiedb-0.3.0.1@sha256:b8a275772f1d194d35894c6b9f2a3ea69c6c307bdef6cda8b31798b3e0e48f49,2593
+  - hls-graph-1.4.0.0@sha256:78409c1f4063527c3746e0c79af6dc280133156ebef6cf6ffd118e6a545c703c,1472
+  - hls-plugin-api-1.1.0.2@sha256:5443ed1a42290564b3da53a1b9855ed5f06c7e95f969532912c1993fbb73a93a,1759
+  - implicit-hie-cradle-0.3.0.3@sha256:ed28a7896f8ec2e386eacb63e61ef42cb5b7ed27a86dffbecaa3f9204cf37ffb,2610
+  - retrie-1.0.0.0@sha256:82014773115807f649f60fe4a3246911bbccd063a3c846cf5665e71f237bdd2d,4241
+  - implicit-hie-0.1.2.5@sha256:517a98ef72f92f0a1617495222774fed3a751a64b0c06fbfc7b858d7aa5de279,2998
+
+
+flags:
+   regex-posix:
+      _regex-posix-clib: true
+
+
+ghc-options:
+  '$everything': -haddock
+
 
 # Extra package databases containing global packages
 # extra-package-dbs: []
