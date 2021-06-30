@@ -5,7 +5,7 @@
  stack install
  stack build
  ```
- # Structure of repos
+ # Structure of solution
  * /app/Main.hs - entry point
  * /lib/ - base logic
     * ./Tests - some code testing beforre sql queries implementing 
